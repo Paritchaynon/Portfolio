@@ -27,8 +27,8 @@
   
   $contact->smtp = array(
     'host' => 'smtp.gmail.com',
-    'username' => 'azusa205@gmail.com',
-    'password' => 'xtul tzjb oqqw rdco',
+    'username' => 'Portfolio',
+    'password' => 'fseq kccd yyyi zhse',
     'port' => '587'
   );
   
