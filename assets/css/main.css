@@ -19,21 +19,21 @@
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
-  --background-color: #f8f5ff; /* Background color for the entire website, including individual sections */
-  --default-color: #4a0e78; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #2c0047; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #8a2be2; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
+  --default-color: #272829; /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #050d18; /* Color for headings, subheadings and title throughout the website */
+  --accent-color: #149ddd; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #b794f6;  /* The default color of the main navmenu links */
+  --nav-color: #a8a9b4;  /* The default color of the main navmenu links */
   --nav-hover-color: #ffffff; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #2c0047; /* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #2c0047; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #b794f6; /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-mobile-background-color: #040b14; /* Used as the background color for mobile navigation menu */
+  --nav-dropdown-background-color: #040b14; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+  --nav-dropdown-color: #a8a9b4; /* Used for navigation links of the dropdown items in the navigation menu. */
   --nav-dropdown-hover-color: #ffffff; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
@@ -69,13 +69,12 @@ body {
 a {
   color: var(--accent-color);
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: 0.3s;
 }
 
 a:hover {
   color: color-mix(in srgb, var(--accent-color), transparent 25%);
   text-decoration: none;
-  text-shadow: 0 0 8px rgba(138, 43, 226, 0.5);
 }
 
 h1,
@@ -145,7 +144,7 @@ h6 {
 --------------------------------------------------------------*/
 .header {
   color: var(--default-color);
-  background: linear-gradient(135deg, #4a0e78, #8a2be2);
+  background-color: var(--background-color);
   position: fixed;
   top: 0;
   left: 0;
@@ -434,7 +433,6 @@ h6 {
   height: 44px;
   border-radius: 50px;
   transition: all 0.4s;
-  animation: pulse 2s infinite;
 }
 
 .scroll-top i {
@@ -524,7 +522,6 @@ section,
   margin-bottom: 20px;
   padding-bottom: 20px;
   position: relative;
-  animation: slideInFromLeft 1s ease-out;
 }
 
 .section-title h2:after {
@@ -540,7 +537,6 @@ section,
 
 .section-title p {
   margin-bottom: 0;
-  animation: slideInFromRight 1s ease-out 0.5s both;
 }
 
 /*--------------------------------------------------------------
@@ -583,13 +579,11 @@ section,
   margin: 0;
   font-size: 64px;
   font-weight: 700;
-  animation: fadeIn 1s ease-out;
 }
 
 .hero p {
   margin: 5px 0 0 0;
   font-size: 26px;
-  animation: slideInFromLeft 1s ease-out 0.5s both;
 }
 
 .hero p span {
@@ -599,7 +593,6 @@ section,
 
 .hero .social-links {
   margin-top: 25px;
-  animation: slideInFromRight 1s ease-out 1s both;
 }
 
 .hero .social-links a {
@@ -902,12 +895,6 @@ section,
 --------------------------------------------------------------*/
 .services .service-item {
   position: relative;
-  animation: fadeIn 0.8s ease-out;
-  transition: transform 0.3s ease;
-}
-
-.services .service-item:hover {
-  transform: translateY(-5px);
 }
 
 .services .service-item .icon {
@@ -1300,7 +1287,7 @@ section,
 .skill-item i {
   font-size: 2.5rem;
   margin-right: 15px;
-  color: #8a2be2;
+  color: #149ddd;
 }
 
 .skill-info {
@@ -1316,92 +1303,4 @@ section,
 .skill-info p {
   font-size: 14px;
   color: #777;
-}
-
-/* Add keyframe animations */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes slideInFromLeft {
-  from { transform: translateX(-50px); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
-}
-
-@keyframes slideInFromRight {
-  from { transform: translateX(50px); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
-}
-
-/* Apply animations to various elements */
-.hero h2 {
-  animation: fadeIn 1s ease-out;
-}
-
-.hero p {
-  animation: slideInFromLeft 1s ease-out 0.5s both;
-}
-
-.hero .social-links {
-  animation: slideInFromRight 1s ease-out 1s both;
-}
-
-.section-title h2 {
-  animation: slideInFromLeft 1s ease-out;
-}
-
-.section-title p {
-  animation: slideInFromRight 1s ease-out 0.5s both;
-}
-
-.skill-item, .service-item, .portfolio-content {
-  animation: fadeIn 0.8s ease-out;
-  transition: transform 0.3s ease;
-}
-
-.skill-item:hover, .service-item:hover, .portfolio-content:hover {
-  transform: translateY(-5px);
-}
-
-.scroll-top {
-  animation: pulse 2s infinite;
-}
-
-/* Add a gradient background to the header */
-.header {
-  background: linear-gradient(135deg, #4a0e78, #8a2be2);
-}
-
-/* Add a subtle animation to links */
-a {
-  transition: all 0.3s ease;
-}
-
-a:hover {
-  text-shadow: 0 0 8px rgba(138, 43, 226, 0.5);
-}
-
-/* Add a glowing effect to buttons */
-button, .btn {
-  transition: all 0.3s ease;
-}
-
-button:hover, .btn:hover {
-  box-shadow: 0 0 15px rgba(138, 43, 226, 0.7);
-}
-
-/* Add a subtle animation to icons */
-.icon {
-  transition: all 0.3s ease;
-}
-
-.icon:hover {
-  transform: scale(1.1);
 }
